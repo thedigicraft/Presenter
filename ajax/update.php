@@ -4,9 +4,11 @@ $id = $_GET['id'];
 //print_r($_GET);
 if($_GET['mode'] == 'new'){
   $name = 'Untitled';
-  $stmt = $dbc->prepare("INSERT INTO slides (screen,name) VALUES (:screen,:name)");
+  $type = $_GET['type'];
+  $stmt = $dbc->prepare("INSERT INTO slides (screen,type,name) VALUES (:screen,:type,:name)");
   $stmt->bindParam(':screen', $id);
   $stmt->bindParam(':name', $name);
+  $stmt->bindParam(':type', $type);
 }else{
   $stmt = $dbc->prepare("UPDATE slides SET name = :name,body = :body,bg = :bg WHERE id = $id");
   

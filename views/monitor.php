@@ -106,11 +106,7 @@ function update_bank(screen){
   });
 </script>
 <header class="well clearfix">
-  <h2><?=$screen['name']?>
-    <small class="pull-right">
-      <input class="form-control input-sm" style="width:500px;" value="<?=H?>screen/<?=$screen['slug']?>/">
-    </small>
-  </h2>
+  <h2>Screen Manager</h2>
 </header>
 <main class="container-fluid">
 
